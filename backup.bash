@@ -1,6 +1,5 @@
 #1/bin/bash
 
-for i in $args
-do
-	echo %i
+for f in "$@"; do
+	echo "$f" 
 done
