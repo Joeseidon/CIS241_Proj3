@@ -7,6 +7,9 @@ if [ $# -eq 0 ]
 		exit 1
 fi
 
+#Creates a backup folder in the home directory if it doesn't already exist 
+[ -d ~/backup ] && echo "Backup Directory Exists" || mkdir ~/backup
+
 #Cycle through command line arguments and take action
 for f in "$@"; do
 	if [[ "$f" = "-l" ]]
@@ -30,6 +33,8 @@ for f in "$@"; do
 			echo "-c : This command will display the number of files and directories"
 			echo "	stored within the backup directory. It will also display the size of"
 			echo "	the back up directory."
+			echo "If a file or directory name is provided, that item will be copied to" 
+			echo "	the backup directory (~/backup)"
 	else
 		#Verify file name 
 		if [[ -e "$f" ]]
