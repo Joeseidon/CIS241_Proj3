@@ -9,7 +9,7 @@ fi
 
 #Cycle through command line arguments and take action
 for f in "$@"; do
-	if [[ "$f" = "-1" ]]
+	if [[ "$f" = "-l" ]]
 		then 
 			echo "Files and Directories Within Backup"
 			ls -la ~/backup
@@ -36,13 +36,10 @@ for f in "$@"; do
 			then
 				#If valid file move to backup dir
 				echo "FILE"
-		else
+		elif [[ -d "$f" ]]
 			then
-				#Check if it is actually a directory
-				if [[ -d "$f" ]]
-					then
-						#Move dir recursively to backup
-						echo "DIR"
+				#Move dir recursively to backup
+				echo "DIR"
 		fi
 	fi
 done
