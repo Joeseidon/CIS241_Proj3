@@ -35,7 +35,7 @@ for f in "$@"; do
 		if [[ -e "$f" ]]
 			then
 				#If valid file move to backup dir
-				cp -i "$f" ~/backup
+				cp -ir "$f" ~/backup
 		else
 			echo "This was not a real file:"
 			echo "    $f"
