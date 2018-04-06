@@ -15,11 +15,11 @@ for f in "$@"; do
 			ls -la ~/backup
 	elif [[ "$f" = "-c" ]]
 		then
-			echo "Number of Files and Directories in Backup"
+			echo "Number of Files and/or Directories in Backup"
 			ls -q ~/backup | wc -l
 			echo "Number of Bytes Taken Up"
 			#Is this supposed to be a Total or for each process????
-			find ~/backup -type f -mtime -30 -exec ls -l {} \; | awk '{ s+=$ } END { print s}'
+			find ~/backup -type f -mtime -30 -exec ls -l {} \; | awk '{ s+=$5 } END { print s }'
 	elif [[ "$f" = "--help" ]]
 		then 
 			echo "To run this script, you must provide the file"
