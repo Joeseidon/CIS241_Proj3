@@ -1,7 +1,7 @@
 #1/bin/bash
 
 #Determin if there is a command line argumet
-if [$# -eq 0 ]
+if [ $# -eq 0 ]
 	then 
 		echo "A command line argument is required"
 		exit 1
@@ -33,15 +33,20 @@ for f in "$@"; do
 	else
 		then
 			#This could be a file or invalid command 
-			
+						
 			#Verify file name 
-
-
-			#If valid file or dir move to backup dir
-
-
-			#Else, print out an error to the user with the name of the file/dir
-
+			if [ -e "$f" ]
+				then
+					#If valid file move to backup dir
+					echo "FILE"
+			else
+				then
+					#Check if it is actually a directory
+					if [ -d "$f" ]
+						then
+							#Move dir recursively to backup
+							echo "DIR"
+			fi
 	fi
 done
 
