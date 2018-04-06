@@ -32,14 +32,14 @@ for f in "$@"; do
 			echo "the back up directory."
 	else
 		#Verify file name 
-		if [ -e "$f" ]
+		if [[ -e "$f" ]]
 			then
 				#If valid file move to backup dir
 				echo "FILE"
 		else
 			then
 				#Check if it is actually a directory
-				if [ -d "$f" ]
+				if [[ -d "$f" ]]
 					then
 						#Move dir recursively to backup
 						echo "DIR"
