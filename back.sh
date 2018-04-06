@@ -23,13 +23,13 @@ for f in "$@"; do
 	elif [[ "$f" = "--help" ]]
 		then 
 			echo "To run this script, you must provide the file"
-			echo "name of existing files and/or one of the following"
- 			echo "commands: -l, -c, --help."
+			echo "	name of existing files and/or one of the following"
+ 			echo "	commands: -l, -c, --help."
 			echo "-l : This command will list files and directories currently"
-			echo "held in the backup directoy."
+			echo "	held in the backup directoy."
 			echo "-c : This command will display the number of files and directories"
-			echo "stored within the backup directory. It will also display the size of"
-			echo "the back up directory."
+			echo "	stored within the backup directory. It will also display the size of"
+			echo "	the back up directory."
 	else
 		#Verify file name 
 		if [[ -e "$f" ]]
@@ -37,7 +37,7 @@ for f in "$@"; do
 				#If valid file move to backup dir
 				cp -ir "$f" ~/backup
 		else
-			echo "This was not a real file:"
+			echo "The following file does not exist:"
 			echo "    $f"
 		fi
 	fi
