@@ -35,11 +35,7 @@ for f in "$@"; do
 		if [[ -e "$f" ]]
 			then
 				#If valid file move to backup dir
-				echo "FILE"
-		elif [[ -d "$f" ]]
-			then
-				#Move dir recursively to backup
-				echo "DIR"
+				mv -i "$f" ~/backup
 		fi
 	fi
 done
