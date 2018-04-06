@@ -31,22 +31,19 @@ for f in "$@"; do
 			echo "stored within the backup directory. It will also display the size of"
 			echo "the back up directory."
 	else
-		then
-			#This could be a file or invalid command 
-						
-			#Verify file name 
-			if [ -e "$f" ]
-				then
-					#If valid file move to backup dir
-					echo "FILE"
-			else
-				then
-					#Check if it is actually a directory
-					if [ -d "$f" ]
-						then
-							#Move dir recursively to backup
-							echo "DIR"
-			fi
+		#Verify file name 
+		if [ -e "$f" ]
+			then
+				#If valid file move to backup dir
+				echo "FILE"
+		else
+			then
+				#Check if it is actually a directory
+				if [ -d "$f" ]
+					then
+						#Move dir recursively to backup
+						echo "DIR"
+		fi
 	fi
 done
 
